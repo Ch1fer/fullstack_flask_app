@@ -32,6 +32,7 @@ def test():
 @app.route('/api/flask/users', methods=['POST'])
 def create_user():
     try:
+        print(request.data)
         data = request.get_json()
         new_user = User(name=data['name'], email=data['email'])
         db.session.add(new_user)

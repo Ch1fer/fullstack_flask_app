@@ -1,0 +1,126 @@
+body{
+    background-color: #323232;
+    margin: 0px;
+}
+
+h1{
+    padding: 0;
+    margin: 0;
+    padding-top: 0.2em;
+    padding-left: 3em;
+    color: #e0e0aa;
+    font-family: "Big Shoulders Inline", sans-serif;
+}
+
+.white-line{
+    border: 0; /* Видаляємо стандартні стилі */
+    height: 0.5px; /* Висота лінії */
+    background-color: #e0e0aa; /* Колір лінії */
+    /* margin: 20px 0; Відступи знизу та зверху */
+}
+
+.white-line-list{
+    border: 0; /* Видаляємо стандартні стилі */
+    height: 0.5px; /* Висота лінії */
+    background-color: #e0e0aa; /* Колір лінії */
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-bottom: 1.5em;
+}
+
+aside{
+    width: 40%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.nav-bar{
+    background-color: #454545;
+    height: 4em;
+    width: 100%;
+    /* display: flex; */
+    align-items: center;
+}
+
+.main-box{
+    display: flex;
+}
+
+.content-box{
+    background-color: #314985;
+    width: 100%;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.list-header{
+    background-color: #16213e;
+    display: flex;
+    /* justify-content: space-between; */
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 2em;
+    border-radius: 0.4em;
+}
+
+.image-box{
+    display: flex;
+    justify-content: space-around;
+    background-color: #16213e;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 2em;
+    border-radius: 3em;
+    padding: 3em;
+    min-height: 10em;
+    
+}
+
+.image-frame{
+
+}
+
+.qr-image{
+    width: 15em;
+    height: 15em;
+}
+
+.list-col{
+    display: flex;
+    width: 35%;
+    padding: 0.3em;
+    color: azure;
+    font-size: 2em;
+
+    font-family: "Big Shoulders Inline", sans-serif;
+    font-optical-sizing: 60;
+    font-weight: 100;
+}
+
+.user-container{
+    background-color: #223a76;
+    color: #e0e0aa;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+    padding: 0.6em;
+    border-radius: 0.4em;
+}
+
+
+
+.edit-btn{
+    background-color: rgb(172, 132, 20);
+    
+    border-radius: 0.4em;
+    border-width: 0px;
+    color: azure;
+}
+
+.edit-btn:hover {
+    background-color: rgb(211, 161, 24);
+}
+

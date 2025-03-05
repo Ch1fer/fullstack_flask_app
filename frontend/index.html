@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline:opsz,wght@10..72,100..900&display=swap" rel="stylesheet">
+    <title>Список користувачів</title>
+    
+</head>
+<body>
+    <div class="nav-bar">
+        <h1>QR Generator</h1>
+        <hr class="white-line">
+        <hr class="white-line">
+    </div>
+    
+    
+    
+
+    <div class="main-box">
+        <aside></aside>
+        <div class="content-box">
+            
+            <div>
+                <form id="userForm">
+                    <input type="text" id="newUserName" placeholder="Enter name" required>
+                    <input type="email" id="newUserEmail" placeholder="Enter email" required>
+                    <button type="submit">Add user</button>
+                </form>
+            </div>
+
+
+            <div class="list-header">
+                <div class="list-col">Author</div>
+                <div class="list-col">QR name</div>
+                <div></div>
+            </div>
+            
+            <hr class="white-line-list">
+        
+            
+
+            <div id="usersList"></div>
+        </div>
+        <aside></aside>
+    </div>
+
+
+
+    <script src="index.js"></script>
+    <script>
+        document.getElementById("userForm").addEventListener("submit", addUser);
+    </script>
+</body>
+</html>
