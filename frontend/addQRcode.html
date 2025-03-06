@@ -6,9 +6,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline:opsz,wght@10..72,100..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline:opsz,wght@10..72,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <title>Список користувачів</title>
     
 </head>
@@ -19,33 +16,24 @@
         <hr class="white-line">
     </div>
     
-    
-    
-
     <div class="main-box">
         <aside></aside>
         <div class="content-box">
-            
-            <div>
-                <button class="edit-btn" onclick="openAddQR()">Add QR</button>
-            </div>
-
-
-            <div class="list-header">
-                <div class="list-col">Author</div>
-                <div class="list-col">QR name</div>
-                <div></div>
-            </div>
-            
-            <hr class="white-line-list">
-        
-            
-
-            <div id="qrcodesList"></div>
+            <form id="qrcodeForm">
+                <input type="text" id="newQRAuthor" placeholder="Enter your name" required>
+                <input type="text" id="newQRName" placeholder="Enter name for QR" required>
+                <input type="texy" id="newQRText" placeholder="Enter text for encode" required>
+                <button type="submit">Add QR</button>
+            </form>
         </div>
         <aside></aside>
     </div>
 
+
+
     <script src="index.js"></script>
+    <script>
+        document.getElementById("qrcodeForm").addEventListener("submit", addQRcode);
+    </script>
 </body>
 </html>

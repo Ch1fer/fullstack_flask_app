@@ -67,9 +67,8 @@ aside{
     display: flex;
     justify-content: space-around;
     background-color: #16213e;
-    margin-left: 2em;
-    margin-right: 2em;
-    margin-top: 2em;
+    margin: 2em;
+    
     border-radius: 3em;
     padding: 3em;
     min-height: 10em;
@@ -97,7 +96,7 @@ aside{
     font-weight: 100;
 }
 
-.user-container{
+.qrcode-container{
     background-color: #223a76;
     color: #e0e0aa;
     display: flex;
@@ -110,8 +109,6 @@ aside{
     border-radius: 0.4em;
 }
 
-
-
 .edit-btn{
     background-color: rgb(172, 132, 20);
     
@@ -122,5 +119,53 @@ aside{
 
 .edit-btn:hover {
     background-color: rgb(211, 161, 24);
+}
+
+.qr-info-box{
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.qr-label{
+    color: #e0e0aa;
+    font-family: "Big Shoulders Inline", sans-serif;
+    font-size: 2em;
+    font-weight: 100;
+    white-space: nowrap;
+    margin-right: 0.5em;
+}
+
+.qr-edit-cell {
+    background-color: #223a76;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em;
+    margin-top:1em;
+    border-radius: 0.3em;
+}
+
+.qr-edit-big-cell {
+    background-color: #223a76;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em;
+    margin-top:1em;
+    border-radius: 0.3em;
+    min-height: 5em;
+}
+
+.qr-input{
+    background-color: #16213e;
+    border-width: 0em;
+    width: 80%;
+    color: #e0e0aa;
+    /* font-family: "Big Shoulders Inline", sans-serif; */
+    font-size: 1.5em;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
 }
 

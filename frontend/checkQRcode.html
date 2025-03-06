@@ -6,6 +6,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline:opsz,wght@10..72,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline:opsz,wght@10..72,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <title>Список користувачів</title>
     
 </head>
@@ -15,9 +18,6 @@
         <hr class="white-line">
         <hr class="white-line">
     </div>
-    
-    
-    
 
     <div class="main-box">
         <aside></aside>
@@ -28,6 +28,29 @@
                     <image class="qr-image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALwAAAC8CAMAAAD1lzSZAAAABlBMVEX///8AAABVwtN+AAACsklEQVR4nO3TQW7EMAxD0c79L91VgUAgKdlxgrb42mTi2NKjgfn6oiiKoiiK+qf1CVX3uHNpTc1TPScO8OBP4bshbu+1+eSZUJ0DPPjT+Nq0otV31ditu3krDvDg38BPwGmfe6r54MH/BrzaW/fX9XRuEg48+DfwKZQLqoI4nNq34gAP/iTelQrx5DM5wIM/hZ9UHTQZ7i7JvT9W4MGbpnWwwyi0+qbW1Xud6XqDB38K3zVRgxUuhe76uL3gwT+Fd2jXKH1ze1OIFgge/GF8Qrk1dU71mM5SvcCDfwKvgD/r6um+dxegYA7qTODBn8K7wW6PCtCdUaHcvnQ54MHfxbsBCaOGpbWdsC0YPPhNvDpUn93apOdKqVngwZ/Cq2Erf7q6V62737fQ4MFv4h1g2iSFST3rfndp0QAe/AZ+BaBACeouSCHV+uTywIPfwacG7ptDqwuYnFfBwIN/At8NWQnmQqjv6vfkAsCDv4u/NlCN0hk1YHrm+l6/Tw3gwe/iU+M0bAWl9tW99XeLBg9+E68Gdd/qkC5sCq36jAOAB7+Id8Nd1QFTTHcJ7uJiAPDgN/F1oPpeh7hQ7ky6rHQGPPjT+NQ4hXWhE6C7nEl48ODv4mtj1cQNcYO6gClAxIIHfxCvAuwMrHAXejo/BgIPfgM/CaQGpN8uqArd9QcP/gm8ajzBVITDpL5uLYLBgz+ET+sTZBfOId2+7hLBgz+Br4Mr2u1R+1Jo9a76gAf/BL4Ldm3aBXdA128SFjz4k/hPqOv3hE2/1Sz1vnXj4MFv4lfWHeS6li7BvU/nggd/Cq+aq2bX9+lv19sFTvPBg38DrwLU/QqegOqsOwMe/Nv4SUN1Vs1wz3RZ4ME/gU+h1N474VSP7uLAgz+Jd1WHugHuXIIm/LjAg9/AUxRFURRF/fH6BhtXMwGdYOloAAAAAElFTkSuQmCC">
                 </div>
             </div>
+            
+            <hr class="white-line-list">
+            <form id="QRForm">
+                <div class="qr-info-box">
+                    <div class="qr-edit-cell">
+                        <div class="qr-label">Author: </div>
+                        <input id="qrAuthor" class="qr-input">
+                    </div>
+                    <div class="qr-edit-cell">
+                        <div class="qr-label">QR name: </div>
+                        <input id="qrName" class="qr-input">
+                    </div>
+                    <div class="qr-edit-cell">
+                        <div class="qr-label">Creation date:</div>
+                        <input id="qrDate" class="qr-input">
+                    </div>
+                    <div class="qr-edit-big-cell">
+                        <div class="qr-label">Text to encode:</div>
+                        <input id="qrText" class="qr-input">
+                    </div>
+                </div>
+                <button type="submit">Edit QR</button>
+            </form>
             
         
             
@@ -40,5 +63,9 @@
 
 
     <script src="index.js"></script>
+
+    <script>
+        document.getElementById("QRForm").addEventListener("submit", editQRcode);
+    </script>
 </body>
 </html>
