@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, make_response
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
+from datetime import datetime
 from os import environ
 
 
@@ -120,12 +121,16 @@ def delete_user(id):
 
 
 # create a qrcode
-@app.route('api/flask/qrcodes', methods=['POST'])
+@app.route('/api/flask/qrcodes', methods=['POST'])
 def create_qrcode():
 
     try:
         data = request.get_json()
-        new_qrcode = QrCode(author=data['author'], qr_name=data['qr_name'], date=data['date'], text=data['text'])
+        date_value = data.get('date', None)
+        if date_value is not None and not date_value.strip():
+            date_value = None
+
+        new_qrcode = QrCode(author=data['author'], qr_name=data['qr_name'], date=date_value, text=data['text'])
         db.session.add(new_qrcode)
         db.session.commit()
 
@@ -140,7 +145,7 @@ def create_qrcode():
         return make_response(jsonify({'message': 'error creating qr_code', 'error': str(e)}), 500)
     
 # get all qr codes
-@app.route('api/flask/qrcodes', methods=['GET'])
+@app.route('/api/flask/qrcodes', methods=['GET'])
 def get_qrcodes():
     try:
         qrcodes = QrCode.query.all()
@@ -157,7 +162,7 @@ def get_qrcodes():
         return make_response(jsonify({'message': 'error getting qr codes', 'error': str(e)}), 500)
 
 # get a qr_code by id
-@app.route('api/flask/qrcodes/<id>', methods=['GET'])
+@app.route('/api/flask/qrcodes/<id>', methods=['GET'])
 def get_qrcode(id):
 
     try:
@@ -169,7 +174,7 @@ def get_qrcode(id):
         return make_response(jsonify({'message': 'error getting qrcode', 'error': str(e)}), 500)
     
 # update qr code
-@app.route('api/flask/qrcodes/<id>', methods=['PUT'])
+@app.route('/api/flask/qrcodes/<id>', methods=['PUT'])
 def update_qrcode(id):
     try:
         qrcode =  QrCode.query.filter_by(id=id).first()
@@ -187,7 +192,7 @@ def update_qrcode(id):
 
 
 # delete a qr code by id
-@app.route('api/flask/qrcodes/<id>', methods=['DELETE'])
+@app.route('/api/flask/qrcodes/<id>', methods=['DELETE'])
 def delete_qrcode(id):
     try:
         qrcode = QrCode.query.filter_by(id=id).first()
