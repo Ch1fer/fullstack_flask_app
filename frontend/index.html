@@ -14,23 +14,23 @@
 </head>
 <body>
     <div class="nav-bar">
-        <h1>QR Generator</h1>
-        <hr class="white-line">
-        <hr class="white-line">
+        <div class="nav-bar-items">
+            <div class="logo">
+                <h1>QR Generator</h1>
+            </div>
+            <div class="nav-bar-links">
+                <a class="nav-link" href="http://127.0.0.1:5500/frontend/index.html">QR List</a>
+                <a class="nav-link" href="http://127.0.0.1:5500/frontend/addQRcode.html">Add QR</a>
+            </div>
+            
+        </div>
     </div>
-    
-    
-    
+    <hr class="navbar-line">
 
     <div class="main-box">
         <aside></aside>
         <div class="content-box">
             
-            <div>
-                <button class="edit-btn" onclick="openAddQR()">Add QR</button>
-            </div>
-
-
             <div class="list-header">
                 <div class="list-col">Author</div>
                 <div class="list-col">QR name</div>
@@ -42,6 +42,8 @@
             
 
             <div id="qrcodesList"></div>
+
+            <hr class="white-line-list">
         </div>
         <aside></aside>
     </div>
