@@ -241,9 +241,56 @@ async function editQRcode(event){
 
 }
 
+async function deleteQRcode(){
+    const urlParams = new URLSearchParams(window.location.search);
+    const qrcodeId = urlParams.get("id");
+
+    if (!qrcodeId) {
+        console.error("QR Code ID not found in URL");
+        return;
+    }
+
+    try{
+        const response = await fetch(`http://localhost:4000/api/flask/qrcodes/${qrcodeId}`,{
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        });
+        if (!response.ok) {
+            throw new Error("Failed to delete QR code");
+        }
+        openListQR();
+    }
+    catch(error) {
+        console.error(error);
+        alert("Error adding QR code");
+    }       
+
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     if (document.getElementById("QRForm")) {
         loadQRCodeData();
+
+        // Додаємо обробник події для кнопки видалення
+        const deleteButton = document.getElementById("deleteQRButton");
+        if (deleteButton) {
+            deleteButton.addEventListener("click", function () {
+                if (confirm("Are you sure you want to delete this QR code?")) {
+                    deleteQRcode();
+                }
+            });
+        }
+
+        // Обробник для кнопки закриття
+        const closeButton = document.getElementById("closeQRButton");
+        if (closeButton) {
+            closeButton.addEventListener("click", function () {
+                openListQR();
+            });
+        }
+
     } else if (document.getElementById("qrcodesList")) {
         getAllQrcodes();
     }
