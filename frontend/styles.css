@@ -135,7 +135,6 @@ aside{
     padding: 0.3em;
     color: azure;
     font-size: 2em;
-
     font-family: "Big Shoulders Inline", sans-serif;
     font-optical-sizing: 60;
     font-weight: 100;
@@ -143,23 +142,38 @@ aside{
 
 .qrcode-container{
     background-color: #223a76;
-    color: #e0e0aa;
     display: flex;
     justify-content: space-between;
+
+    font-size: 1.1em;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: 60;
+    font-weight: 100;
+    color: #e0e0aa;
+
     margin-left: 2em;
     margin-right: 2em;
-    margin-top: 0.7em;
-    margin-bottom: 0.7em;
-    padding: 0.6em;
+    margin-top: 0.8em;
+    margin-bottom: 0.8em;
+    padding: 0.7em;
     border-radius: 0.4em;
 }
 
+
+
 .edit-btn{
     background-color: rgb(172, 132, 20);
-    
     border-radius: 0.4em;
     border-width: 0px;
+
+    
     color: azure;
+    font-size: 0.9em;
+
+    padding: 0.3em;
+    border-width: 0.2em;
+    border-style: solid;
+    border-color: #16213e;
 }
 
 .edit-btn:hover {
@@ -297,3 +311,6 @@ aside{
     "wdth" 100;
 }
 
+.bottom-space{
+    height: 2em;
+}
