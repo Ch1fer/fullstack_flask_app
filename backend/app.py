@@ -23,10 +23,10 @@ class User(db.Model):
 class QrCode(db.Model):
     __tablename__ = 'qrcodes'
     id = db.Column(db.Integer, primary_key=True)
-    author = db.Column(db.String(80), unique=True, nullable=False)
-    qr_name = db.Column(db.String(80), unique=True, nullable=False)
+    author = db.Column(db.String(80), unique=False, nullable=False)
+    qr_name = db.Column(db.String(80), unique=False, nullable=False)
     date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-    text = db.Column(db.String(150), unique=True, nullable=False)
+    text = db.Column(db.String(150), unique=False, nullable=False)
 
     def json(self):
         return {
