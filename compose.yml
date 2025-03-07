@@ -1,8 +1,18 @@
 services:
 
+  # nginx service
+  nginxserver:
+    container_name: nginx_server
+    image: nginx_server:1.0.0
+    build:
+      context: ./frontend
+      dockerfile: nginx.dockerfile
+    ports:
+     - 8080:80
+
   # flask service
   flaskapp:
-    container_name: flaskapp
+    container_name: flask_app
     image: flaskapp:1.0.0
     build:
       context: ./backend
