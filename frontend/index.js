@@ -1,28 +1,6 @@
-async function fetchData(){
-
-    const userId = document.getElementById("userId").value;
-
-    try{
-        const responce = await fetch(`http://localhost:4000/api/flask/users/${userId}`)
-
-        if(!responce.ok){
-            throw new Error("Could not fetch resource");
-        }
-
-        const data = await responce.json();
-        const userName = data.user.name
-        const userEmail = data.user.email
-        document.getElementById("userName").innerText = userName;
-        document.getElementById("userEmail").innerText = userEmail;
-    }
-    catch(error){
-        console.error(error)
-    }
-}
-
 async function getAllUsers(){
     try{
-        const responce = await fetch(`http://localhost:4000/api/flask/users`)
+        const responce = await fetch(`http://localhost:8080/api/flask/users`)
 
         if(!responce.ok){
             throw new Error("Could not fetch resource")
@@ -58,7 +36,7 @@ async function addUser(event){
     const email = emailInput.value;
 
     try{
-        const response = await fetch(`http://localhost:4000/api/flask/users`,{
+        const response = await fetch(`http://localhost:8080/api/flask/users`,{
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -87,15 +65,15 @@ async function addUser(event){
 function openEditQR(qrcodeId) {
     // Ту можна додати логіку для переходу на сторінку редагування.
     // Наприклад, це може бути перехід на сторінку редагування за ID користувача:
-    window.location.href = `/frontend/checkQRcode.html?id=${qrcodeId}`;
+    window.location.href = `/checkQRcode.html?id=${qrcodeId}`;
 }
 
 function openAddQR(){
-    window.location.href = `/frontend/addQRcode.html`;
+    window.location.href = `/addQRcode.html`;
 }
 
 function openListQR(){
-    window.location.href = `/frontend/index.html`;
+    window.location.href = `/index.html`;
 }
 
 
