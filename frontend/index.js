@@ -270,7 +270,7 @@ async function deleteQRcode(){
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    if (document.getElementById("QRForm")) {
+    if (document.getElementById("QREditForm")) {
         loadQRCodeData();
 
         // Додаємо обробник події для кнопки видалення
@@ -291,7 +291,17 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
 
-    } else if (document.getElementById("qrcodesList")) {
+    } 
+    else if (document.getElementById("qrcodesList")) {
         getAllQrcodes();
+    }
+    else if (document.getElementById("QRAddForm")) {
+        // Обробник для кнопки закриття
+        const closeButton = document.getElementById("closeQRButton");
+        if (closeButton) {
+            closeButton.addEventListener("click", function () {
+                openListQR();
+            });
+        }
     }
 });

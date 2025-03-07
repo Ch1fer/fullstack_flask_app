@@ -19,11 +19,38 @@
     <div class="main-box">
         <aside></aside>
         <div class="content-box">
-            <form id="qrcodeForm">
+            <!-- <form id="qrcodeForm">
                 <input type="text" id="newQRAuthor" placeholder="Enter your name" required>
                 <input type="text" id="newQRName" placeholder="Enter name for QR" required>
                 <input type="texy" id="newQRText" placeholder="Enter text for encode" required>
                 <button type="submit">Add QR</button>
+            </form> -->
+            <hr class="white-line-list">
+
+            <form id="QRAddForm">
+                <div class="qr-info-box">
+                    <div class="qr-edit-cell">
+                        <div class="qr-label">Author: </div>
+                        <input type="text" id="newQRAuthor" placeholder="Enter your name" required class="qr-input">
+                    </div>
+                    <div class="qr-edit-cell">
+                        <div class="qr-label">QR name: </div>
+                        <input type="text" id="newQRName" placeholder="Enter name for QR" required class="qr-input">
+                    </div>
+                    <div class="qr-edit-big-cell">
+                        <div class="qr-label">Text to encode:</div>
+                        <input type="texy" id="newQRText" placeholder="Enter text for encode" required class="qr-input">
+                    </div>
+                </div>
+                
+                <hr class="white-line-list">
+
+                <div class="qr-info-box">
+                    <div class="qr-button-edit-bar">
+                        <button class="close-butt" type="button" id="closeQRButton">Close</button>
+                        <button class="add-butt" type="submit" id="closeQRButton">Add QR</button>
+                    </div>
+                </div>
             </form>
         </div>
         <aside></aside>
@@ -33,7 +60,7 @@
 
     <script src="index.js"></script>
     <script>
-        document.getElementById("qrcodeForm").addEventListener("submit", addQRcode);
+        document.getElementById("QRAddForm").addEventListener("submit", addQRcode);
     </script>
 </body>
 </html>
