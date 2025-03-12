@@ -3,6 +3,9 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from datetime import datetime, timezone
 from os import environ
+import qrcode
+import base64
+from io import BytesIO
 
 
 app = Flask(__name__)
@@ -10,6 +13,16 @@ CORS(app)  # Enable CORS for all routes
 app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DATABASE_URL')
 db = SQLAlchemy(app)
 
+
+def generate_qrcode_base64(qr_data):
+    img = qrcode.make(qr_data)
+
+    img_bytes = BytesIO()
+    img.save(img_bytes, format="PNG")
+
+    img_base64 = base64.b64encode(img_bytes.getvalue()).decode("utf-8")
+
+    return img_base64
 
 
 class QrCode(db.Model):
@@ -88,7 +101,15 @@ def get_qrcode(id):
     try:
         qrcode = QrCode.query.filter_by(id=id).first()
         if qrcode:
-            return make_response(jsonify({'qrcode': qrcode.json()}), 200)
+            
+            qr_code_base64 = generate_qrcode_base64(qrcode.text)
+
+            response_data = {
+                'qrcode': qrcode.json(),
+                'qrcode_image': qr_code_base64
+            }
+
+            return make_response(jsonify(response_data), 200)
         return make_response(jsonify({'message': 'qrcode not found'}), 404)
     except Exception as e:
         return make_response(jsonify({'message': 'error getting qrcode', 'error': str(e)}), 500)

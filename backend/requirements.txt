@@ -2,3 +2,5 @@ flask
 psycopg2-binary
 Flask-SQLAlchemy
 Flask-CORS
+qrcode==6.1
+pillow
