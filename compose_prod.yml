@@ -1,0 +1,47 @@
+services:
+
+  # nginx service
+  nginxserver:
+    container_name: nginx_server
+    image: ch1fer/qr-generator-frontend:1.0.0
+    ports:
+     - 8080:80
+    networks:
+      - frontend_network
+
+  # flask service
+  flaskapp:
+    container_name: flask_app
+    image: ch1fer/qr-generator-backend:1.0.0
+    ports:
+      - 4000:4000
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/postgres
+    depends_on:
+      - db
+    networks:
+      - backend_network
+
+
+  # db service
+  db:
+    container_name: db
+    image: postgres:13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - backend_network
+
+  
+volumes:
+  pgdata: {}
+
+networks:
+  backend_network: {}
+  frontend_network: {}
