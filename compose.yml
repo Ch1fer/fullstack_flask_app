@@ -9,6 +9,8 @@ services:
       dockerfile: nginx.dockerfile
     ports:
      - 8080:80
+    networks:
+      - frontend_network
 
   # flask service
   flaskapp:
@@ -23,6 +25,8 @@ services:
       - DATABASE_URL=postgresql://postgres:postgres@db:5432/postgres
     depends_on:
       - db
+    networks:
+      - backend_network
 
 
   # db service
@@ -37,6 +41,13 @@ services:
       - 5432:5432
     volumes:
       - pgdata:/var/lib/postgresql/data
+    networks:
+      - backend_network
+
   
 volumes:
   pgdata: {}
+
+networks:
+  backend_network: {}
+  frontend_network: {}
