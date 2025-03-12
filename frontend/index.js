@@ -161,6 +161,7 @@ async function loadQRCodeData() {
 
         const rawQRData = await response.json();
         const qrData = rawQRData.qrcode
+        const imageBase64 = rawQRData.qrcode_image
         console.log(qrData)
 
         // Заповнюємо форму отриманими даними
@@ -168,6 +169,13 @@ async function loadQRCodeData() {
         document.getElementById("qrName").value = qrData.qr_name;
         document.getElementById("qrDate").value = qrData.date;
         document.getElementById("qrText").value = qrData.text;
+
+        if (imageBase64) {
+            const qrImageElement = document.getElementById("qrImage");
+            qrImageElement.src = "";
+            qrImageElement.src = `data:image/png;base64,${imageBase64}`;
+            qrImageElement.style.display = "block";
+        }
 
     } catch (error) {
         console.error(error);
