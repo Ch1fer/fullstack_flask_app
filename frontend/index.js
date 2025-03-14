@@ -95,8 +95,16 @@ async function getAllQrcodes(){
             const qrcodeItem = document.createElement("div");
             qrcodeItem.classList.add("qrcode-container");
             qrcodeItem.innerHTML = `
-                <strong>${qrcode.author}</strong> ${qrcode.qr_name}
-                <button class="edit-btn" onclick="openEditQR(${qrcode.id})">Check QR</button>
+                <div class="list-col-item">
+                    <strong>${qrcode.author}</strong>
+                </div> 
+                <div class="list-col-item">
+                    ${qrcode.qr_name}
+                </div>
+                <div class="butt-cell">
+                    <button class="edit-btn" onclick="openEditQR(${qrcode.id})">Check QR</button>
+                </div>
+                
             `;
             qrcodesList.appendChild(qrcodeItem);
         });

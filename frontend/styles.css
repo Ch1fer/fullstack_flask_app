@@ -27,17 +27,17 @@ h1{
 
 
 .navbar-line{
-    border: 0; /* Видаляємо стандартні стилі */
-    height: 0.5px; /* Висота лінії */
-    background-color: #e0e0aa; /* Колір лінії */
+    border: 0;
+    height: 0.5px;
+    background-color: #e0e0aa;
     margin-top: 0;
     margin-bottom: 1em;
 }
 
 .white-line-list{
-    border: 0; /* Видаляємо стандартні стилі */
-    height: 0.5px; /* Висота лінії */
-    background-color: #e0e0aa; /* Колір лінії */
+    border: 0;
+    height: 0.5px;
+    background-color: #e0e0aa;
     margin-left: 2em;
     margin-right: 2em;
     margin-bottom: 1.25em;
@@ -56,7 +56,6 @@ aside{
     background-color: #454545;
     height: 4em;
     width: 100%;
-    /* display: flex; */
     align-items: center;
 }
 
@@ -68,7 +67,6 @@ aside{
 .nav-bar-links{
     width: 100%;
     display: flex;
-    /* justify-content: space-between; */
     background-color: #323232;
 }
 
@@ -105,9 +103,8 @@ aside{
 .list-header{
     background-color: #16213e;
     display: flex;
-    /* justify-content: space-between; */
-    margin-left: 2em;
-    margin-right: 2em;
+    margin-left: 2rem;
+    margin-right: 2rem;
     margin-top: 2em;
     border-radius: 0.4em;
 }
@@ -117,11 +114,9 @@ aside{
     justify-content: space-around;
     background-color: #16213e;
     margin: 2em;
-    
     border-radius: 3em;
     padding: 3em;
     min-height: 10em;
-    
 }
 
 .qr-image{
@@ -131,8 +126,8 @@ aside{
 
 .list-col{
     display: flex;
-    width: 35%;
-    padding: 0.3em;
+    width: 40%;
+    padding: 0.8rem;
     color: azure;
     font-size: 2em;
     font-family: "Big Shoulders Inline", sans-serif;
@@ -140,10 +135,22 @@ aside{
     font-weight: 100;
 }
 
+.list-col-item{
+    display: flex;
+    width: 40%;
+    padding: 0.8rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.qrcodeslist{
+    border: 0;
+}
+
 .qrcode-container{
+    border: 0;
     background-color: #223a76;
     display: flex;
-    justify-content: space-between;
 
     font-size: 1.1em;
     font-family: "Open Sans", sans-serif;
@@ -151,25 +158,27 @@ aside{
     font-weight: 100;
     color: #e0e0aa;
 
-    margin-left: 2em;
-    margin-right: 2em;
+    margin-left: 2rem;
+    margin-right: 2rem;
     margin-top: 0.8em;
     margin-bottom: 0.8em;
-    padding: 0.7em;
     border-radius: 0.4em;
 }
 
-
+.butt-cell{
+    width: 20%;
+    display: flex;
+    padding-right: 0.8rem;
+    justify-content: flex-end;
+    align-items: center;
+} 
 
 .edit-btn{
     background-color: rgb(172, 132, 20);
     border-radius: 0.4em;
     border-width: 0px;
-
-    
     color: azure;
     font-size: 0.9em;
-
     padding: 0.3em;
     border-width: 0.2em;
     border-style: solid;
@@ -301,7 +310,6 @@ aside{
     border-width: 0em;
     width: 80%;
     color: #e0e0aa;
-    /* font-family: "Big Shoulders Inline", sans-serif; */
     font-size: 1.5em;
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
