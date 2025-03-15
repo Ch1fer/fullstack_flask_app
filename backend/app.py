@@ -25,6 +25,20 @@ def generate_qrcode_base64(qr_data):
     return img_base64
 
 
+def initialize_db():
+    if QrCode.query.count() == 0:
+        initial_qrcodes = [
+            QrCode(author='1ucky', qr_name='join my brawl stars club', text='https://link.brawlstars.com/invite/band/en?tag=2V2G98PJY&token=dmsehejj'),
+            QrCode(author='Ch1fer', qr_name='github repository of this project', text='https://github.com/Ch1fer/fullstack_flask_app'),
+            QrCode(author='Yohan', qr_name='Free Robux', text='https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley'),
+            QrCode(author='Mister Beast', qr_name='Mister Beast video', text='https://www.youtube.com/watch?v=5FlveALbzFk&ab_channel=MrBeastGaming'),
+            QrCode(author='Yevhen', qr_name='TUKE website', text='https://www.tuke.sk/en')
+        ]
+        
+        db.session.add_all(initial_qrcodes)
+        db.session.commit()
+
+
 class QrCode(db.Model):
     __tablename__ = 'qrcodes'
     id = db.Column(db.Integer, primary_key=True)
@@ -43,7 +57,7 @@ class QrCode(db.Model):
             }
     
 db.create_all()
-
+initialize_db()
 
 
 # create a test route
