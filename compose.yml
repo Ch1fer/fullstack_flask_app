@@ -16,6 +16,7 @@ services:
   flaskapp:
     container_name: flask_app
     image: flaskapp:1.0.0
+    restart: on-failure
     build:
       context: ./backend
       dockerfile: flask.dockerfile

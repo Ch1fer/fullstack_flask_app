@@ -13,6 +13,7 @@ services:
   flaskapp:
     container_name: flask_app
     image: ch1fer/qr-generator-backend:1.0.0
+    restart: on-failure
     ports:
       - 4000:4000
     environment:
