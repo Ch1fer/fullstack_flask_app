@@ -7,13 +7,21 @@ The web application runs in 3 separate Docker containers:
 - **db** – Database container that stores QR code records and related data.
 - **flask_app** – Backend application built with Flask, responsible for generating QR codes and processing API requests.
 
-## Running the Project with Docker  
-1. To start the project, run the following command in the Bash terminal:
+## Running the Project with Docker
+1. Before starting the project, make sure you have the following files in your project directory:
+   - `compose_prod.yml`
+   - `start-app.sh`
+   - `end-app.sh`
+
+2. To start the project, run the following command in the Bash terminal:
    ```bash
    ./start-app.sh
-2. After starting the project, you can access the application at:
+   
+3. After starting the project, you can access the application at:
 http://localhost:8080/
 
-3. To stop the project, run the following command in the Bash terminal:
+4. To stop the project, run the following command in the Bash terminal:
     ```bash
    ./end-app.sh
+
+repository: **https://github.com/Ch1fer/fullstack_flask_app**
